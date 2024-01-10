@@ -31,5 +31,20 @@ const GameConroller = (function() {
 
     const switchPlayer = () => {
         currentPlayer = currentPlayer === playerX ? playerO : playerX;
+    };
+
+    const makeMove = (index) => {
+        if (Gameboard.setCell(index, currentPlayer.symbol)) {
+            switchPlayer();
+            // Win or Draw Logic
+        }
     }
-})
+
+    const startNewGame = () => {
+        Gameboard.reset();
+        currentPlayer = playerX;
+        // Game setup logic
+    };
+
+    return { makeMove, startNewGame };
+})();
