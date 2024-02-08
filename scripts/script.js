@@ -33,6 +33,9 @@ const Gameboard = (function() {
     return { setCell, getCell, reset, printBoard };
 })();
 
+const Player = (name, symbol) => {
+    return {name, symbol};
+};
 
 const GameController = (function() {
     const playerX = Player('Player 1', 'X');
@@ -70,6 +73,7 @@ const GameController = (function() {
 
     const makeMove = (index) => {
         if (Gameboard.setCell(index, currentPlayer.symbol)) {
+            Gameboard.printBoard(); // Print the board after a move
             if (checkWin()) {
                 alert(`${currentPlayer.name} wins!`);
                 startNewGame();
@@ -86,9 +90,11 @@ const GameController = (function() {
     const startNewGame = () => {
         Gameboard.reset();
         currentPlayer = playerX;
-        // Additional game setup logic here (e.g., updating UI elements)
+        console.log("New game started. Player 1's turn (X).");
+        Gameboard.printBoard(); // Optionally print the empty board at the start of a game
     };
 
     return { makeMove, startNewGame };
 })();
+
 
