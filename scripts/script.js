@@ -129,6 +129,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderBoard(); // Initialize the board on page load
 });
-
-
-
