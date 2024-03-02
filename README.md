@@ -17,5 +17,5 @@ To use the tic-tac-toe-JS, follow these steps:
 
 1. **Clone the repository:**
  ```bash
- git clone git@github.com:[Your Username]/tic-tac-toe-JS.git
+ git clone git@github.com:EJ-Lan/tic-tac-toe-JS.git
  ```
